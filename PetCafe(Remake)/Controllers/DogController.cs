@@ -94,7 +94,7 @@ namespace PetCafe_Remake_.Controllers
             if (dogId != null)
             {
                 try
-                {              
+                {
                     await _photoService.DeletePhotoAsync(dogId.Image);
                 }
                 catch (Exception)
@@ -124,7 +124,21 @@ namespace PetCafe_Remake_.Controllers
             }
         }
 
+        public async Task<IActionResult> Delete(int id)
+        {
+            var dogDetails = await _dogRepository.GetByIdAsync(id);
+            if (dogDetails == null) return View("Error");
+            return View(dogDetails);
+        }
 
 
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteDog(int id)
+        {
+            var dogDetails = await _dogRepository.GetByIdAsync(id);
+            if (dogDetails == null) return View("Error");
+            _dogRepository.Delete(dogDetails);
+            return RedirectToAction("Index");
+        }
     }
 }
