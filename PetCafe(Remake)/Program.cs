@@ -1,13 +1,18 @@
 using Microsoft.EntityFrameworkCore;
 using PetCafe_Remake_.Data;
+using PetCafe_Remake_.Helper;
 using PetCafe_Remake_.Interface;
 using PetCafe_Remake_.Repository;
+using PetCafe_Remake_.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<IDogRepository, DogRepository>();
 builder.Services.AddScoped<IEventRepository, EventRepository>();
+builder.Services.AddScoped<IPhotoService, PhotoService>();
+builder.Services.Configure<CloudinarySettings>
+(builder.Configuration.GetSection("CloudinarySettings"));
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>

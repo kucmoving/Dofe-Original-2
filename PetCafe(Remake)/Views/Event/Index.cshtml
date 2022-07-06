@@ -45,6 +45,13 @@
                 <p class="fst-italic text-center">@item.Introduction</p>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
               </div>
+                                      <a type="btn-success" asp-controller="Event" asp-action="Detail" 
+                        asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">View</a>
+                        <a type="btn-success" asp-controller="Event" asp-action="Edit" 
+                        asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Edit</a>
+                        <a type="btn-success" asp-controller="Event" asp-action="Delete" 
+                        asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Delete</a>
+
             </div>
           </div>
           }

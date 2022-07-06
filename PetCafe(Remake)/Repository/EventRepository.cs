@@ -28,15 +28,21 @@ namespace PetCafe_Remake_.Repository
             return Save();
         }
 
+        public async Task<IEnumerable<Event>> GetAll()
+        {
+            return await _context.Events.ToListAsync();
+        }
+
         public async Task<Event> GetByIdAsync(int id) //return single item / one to many relationship (join and inclue)
         {
             return await _context.Events.FirstOrDefaultAsync(i => i.Id == id);
         }
 
-        public Task<Event> GetByIdAsyncNoTracking(int id)
+        public async Task<Event> GetByIdAsyncNoTracking(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Events.Where(i => i.Id == id).AsNoTracking().FirstOrDefaultAsync();
         }
+
 
         //      public async Task<Sharing> GetByIdAsyncNoTracking(int id) // no tracking in editing , 否則會重疊
         //     {
@@ -65,9 +71,5 @@ namespace PetCafe_Remake_.Repository
             return Save();
         }
 
-        public async Task<IEnumerable<Event>> GetAll()
-        {
-            return await _context.Events.ToListAsync();
-        }
     }
 }

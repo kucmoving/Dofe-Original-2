@@ -1,6 +1,6 @@
-﻿@model CreateDogViewModel
+﻿@model EditEventViewModel
+@using PetCafe_Remake_.Models.Data.Enum
 @using PetCafe_Remake_.ViewModels
-@using PetCafe_Remake_.Models.Data.Enum;
 
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -60,43 +60,48 @@
           <div class="col-lg-8 mt-5 mt-lg-0">
 
 
-<form method="post" asp-action="Create" enctype="multipart/form-data">
-                  <div class="row">
+<form method="post" asp-action="Edit" enctype="multipart/form-data">
+        <input type="hidden" value="Id" id="Id" />
+    <div class="row">
                 <div class="col-md-6 form-group">
   <div class="form-group">
-    <label asp-for="DogName">DogName</label>
-    <input asp-for="DogName" class="form-control" placeholder="Ex. Bobby">
-    <span asp-valiadation-for="DogName" class="text-danger"></span>
+    <label asp-for="EventName">EventName</label>
+    <input asp-for="EventName" class="form-control" placeholder="Ex. Bobby">
+    <span asp-valiadation-for="EventName" class="text-danger"></span>
   </div>
     </div>
 
      <!--select-->
 <div class="col-md-6 form-group">
     <div class="form-group">
-    <label asp-for="DogCategory">Dog category</label>
-    <select asp-for="DogCategory" asp-items="@Html.GetEnumSelectList<DogCategory>()" class="form-control form-control-sm">
+    <label asp-for="EventCategory">Event category</label>
+    <select asp-for="EventCategory" asp-items="@Html.GetEnumSelectList<EventCategory>()" class="form-control form-control-sm">
         <option>Select a category</option>
         </select>
          </div>
                   </div>
 
-     <!--order table, table.column-->
+              <!--order table, table.column-->
      <div class="col-md-6 form-group">
-
   <div class="form-group">
-    <label asp-for="VisitTime.Day">Day to visit</label>
-    <input asp-for="VisitTime.Day" class="form-control" placeholder="Ex. Wednesday">
-    <span asp-valiadation-for="VisitTime.Day" class="text-danger"></span>
+    <label asp-for="EventTime">Day to visit</label>
+    <input asp-for="EventTime" asp-format="{0:dd/MM/yyyy HH:mm}" class="form-control" />
+    <span asp-valiadation-for="EventTime" class="text-danger"></span>
   </div>
-           </div>
-           <div class="col-md-6 form-group">
+  </div>
 
-    <div class="form-group">
-    <label asp-for="VisitTime.TimeFrame">Time to visit</label>
-    <input asp-for="VisitTime.TimeFrame" class="form-control" placeholder="Ex. Morning">
-    <span asp-valiadation-for="VisitTime.TimeFrame" class="text-danger"></span>
+
+
+
+  <!---region-->
+<div class="col-md-6 form-group">
+  <div class="form-group">
+    <label asp-for="Region">Region</label>
+    <input asp-for="Region" class="form-control" placeholder="Ex. Bobby">
+    <span asp-valiadation-for="Region" class="text-danger"></span>
   </div>
-             </div>
+    </div>
+
 
   </div>
   <div class="form-group">
@@ -106,7 +111,7 @@
   </div>
       <div class="form-group">
     <label asp-for="Image">Image</label>
-    <input asp-for="Image" class="form-control" type="file" placeholder="Ex.My dog sits on my lap, stretches his/her paws, and dangles to find the most comfortable position. I think he/she is the cutest pet I could wish for.">
+    <input asp-for="Image" class="form-control" placeholder="Ex.My dog sits on my lap, stretches his/her paws, and dangles to find the most comfortable position. I think he/she is the cutest pet I could wish for.">
     <span asp-valiadation-for="Image" class="text-danger"></span>
   </div>
 
@@ -118,3 +123,5 @@
 
       </div>
     </section><!-- End Contact Us Section -->
+
+  </main><!-- End #main -->

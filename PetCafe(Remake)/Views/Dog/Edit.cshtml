@@ -1,6 +1,6 @@
-﻿@model CreateDogViewModel
+﻿@model EditDogViewModel
 @using PetCafe_Remake_.ViewModels
-@using PetCafe_Remake_.Models.Data.Enum;
+@using PetCafe_Remake_.Models.Data.Enum
 
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -60,7 +60,8 @@
           <div class="col-lg-8 mt-5 mt-lg-0">
 
 
-<form method="post" asp-action="Create" enctype="multipart/form-data">
+<form method="post" asp-action="Edit" enctype="multipart/form-data">
+    <input type="hidden" value="VisitTimeId" id="VisitTimeId" />
                   <div class="row">
                 <div class="col-md-6 form-group">
   <div class="form-group">
