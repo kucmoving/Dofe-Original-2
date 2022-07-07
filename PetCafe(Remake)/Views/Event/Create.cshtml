@@ -1,5 +1,6 @@
-﻿@model Event
+﻿@model CreateEventViewModel
 @using PetCafe_Remake_.Models.Data.Enum
+@using PetCafe_Remake_.ViewModels
 
 
 @*
@@ -60,7 +61,8 @@
           <div class="col-lg-8 mt-5 mt-lg-0">
 
 
-<form method="post" asp-action="Create">
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+     <input type="hidden" id="AppUserId" name="AppUserId" asp-for="AppUserId" />
                   <div class="row">
                 <div class="col-md-6 form-group">
   <div class="form-group">
@@ -109,7 +111,7 @@
   </div>
       <div class="form-group">
     <label asp-for="Image">Image</label>
-    <input asp-for="Image" class="form-control" placeholder="Ex.My dog sits on my lap, stretches his/her paws, and dangles to find the most comfortable position. I think he/she is the cutest pet I could wish for.">
+    <input asp-for="Image" class="form-control" type="file" placeholder="Ex.My dog sits on my lap, stretches his/her paws, and dangles to find the most comfortable position. I think he/she is the cutest pet I could wish for.">
     <span asp-valiadation-for="Image" class="text-danger"></span>
   </div>
 

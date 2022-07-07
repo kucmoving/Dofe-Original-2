@@ -19,6 +19,7 @@ namespace PetCafe_Remake_.Models
 
         public EventCategory EventCategory { get; set; }
 
+
         public string? AppUserId { get; set; }
 
         public AppUser? AppUser { get; set; }

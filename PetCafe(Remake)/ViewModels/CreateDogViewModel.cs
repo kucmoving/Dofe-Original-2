@@ -14,5 +14,6 @@ namespace PetCafe_Remake_.ViewModels
 
         public VisitTime VisitTime { get; set; }
         public DogCategory DogCategory { get; set; }
+        public string AppUserId { get; set; }
     }
 }

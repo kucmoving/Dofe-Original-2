@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PetCafe_Remake_.Extension;
 using PetCafe_Remake_.Interface;
 using PetCafe_Remake_.Models;
 using PetCafe_Remake_.ViewModels;
@@ -9,11 +10,14 @@ namespace PetCafe_Remake_.Controllers
     {
         private readonly IEventRepository _eventRepository;
         private readonly IPhotoService _photoService;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public EventController(IEventRepository eventRepository, IPhotoService photoService)
+        public EventController(IEventRepository eventRepository, IPhotoService photoService,
+            IHttpContextAccessor httpContextAccessor)
         {
             _eventRepository = eventRepository;
             _photoService = photoService;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<IActionResult> Index()
@@ -29,7 +33,10 @@ namespace PetCafe_Remake_.Controllers
         }
         public IActionResult Create()
         {
-            return View();
+            var curUserId = _httpContextAccessor.HttpContext.User.GetUserId();
+            var createEventViewModel = new CreateEventViewModel { AppUserId = curUserId };
+            return View(createEventViewModel);
+
         }
 
         [HttpPost]
@@ -43,8 +50,12 @@ namespace PetCafe_Remake_.Controllers
                     EventName = eventVM.EventName,
                     Introduction = eventVM.Introduction,
                     Image = result.Url.ToString(),
-                    EventTime = eventVM.EventTime
-                };
+                    AppUserId = eventVM.AppUserId,
+                    EventTime = eventVM.EventTime,
+                    Region = eventVM.Region
+
+
+    };
                 _eventRepository.Add(_event);
                 return RedirectToAction("index");
             }

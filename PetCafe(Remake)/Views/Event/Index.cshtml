@@ -47,10 +47,13 @@
               </div>
                                       <a type="btn-success" asp-controller="Event" asp-action="Detail" 
                         asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">View</a>
+
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("admin")){
                         <a type="btn-success" asp-controller="Event" asp-action="Edit" 
                         asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Edit</a>
                         <a type="btn-success" asp-controller="Event" asp-action="Delete" 
                         asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Delete</a>
+                        }
 
             </div>
           </div>

@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
+using PetCafe_Remake_.Extension;
 using PetCafe_Remake_.Interface;
 using PetCafe_Remake_.Models;
 using PetCafe_Remake_.ViewModels;
@@ -10,11 +11,14 @@ namespace PetCafe_Remake_.Controllers
     {
         private readonly IDogRepository _dogRepository;
         private readonly IPhotoService _photoService;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public DogController(IDogRepository dogRepository, IPhotoService photoService)
+        public DogController(IDogRepository dogRepository, IPhotoService photoService,
+            IHttpContextAccessor httpContextAccessor)
         {
             _dogRepository = dogRepository;
             _photoService = photoService;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<IActionResult> Index()
@@ -33,8 +37,11 @@ namespace PetCafe_Remake_.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            var curUserId = _httpContextAccessor.HttpContext.User.GetUserId();
+            var createDogViewModel = new CreateDogViewModel { AppUserId = curUserId };
+            return View(createDogViewModel);
         }
+
 
         [HttpPost]
         public async Task<IActionResult> Create(CreateDogViewModel dogVM)
@@ -47,6 +54,7 @@ namespace PetCafe_Remake_.Controllers
                     DogName = dogVM.DogName,
                     Introduction = dogVM.Introduction,
                     Image = result.Url.ToString(),
+                    AppUserId = dogVM.AppUserId,
                     VisitTime = new VisitTime
                     {
                         Day = dogVM.VisitTime.Day,
