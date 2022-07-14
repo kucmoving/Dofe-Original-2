@@ -75,7 +75,8 @@ namespace PetCafe_Remake_.Controllers
                 Gender = user.Gender,
                 ProfileImageUrl = user.ProfileImageUrl,
                 Occupation = user.Occupation,
-                Region = user.Region
+                Region = user.Region,
+                AboutMe = user.AboutMe
             };
             return View(editUserViewModel);
         }
@@ -128,9 +129,5 @@ namespace PetCafe_Remake_.Controllers
 
             return RedirectToAction("Detail", "User", new { user.Id });
         }
-
-
-
-
     }
 }

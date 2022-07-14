@@ -115,6 +115,7 @@ namespace PetCafe_Remake_.Controllers
                 {
                     Id = id,
                     EventName = eventVM.EventName,
+                    EventCategory = eventVM.EventCategory,
                     Introduction = eventVM.Introduction,
                     Image = photoResult.Url.ToString(),
                     EventTime = (DateTime)eventVM.EventTime,

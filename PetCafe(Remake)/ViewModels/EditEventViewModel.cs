@@ -12,9 +12,8 @@ namespace PetCafe_Remake_.ViewModels
         public string? URL { get; set; }
         public string? Region { get; set; }
         public DateTime? EventTime { get; set; }
-        public EventCategory? EventCategory { get; set; }
-        public AppUser? AppUser { get; set; }
-        public string? AppUserId { get; set; }
+        public EventCategory EventCategory { get; set; }
+        public string AppUserId { get; set; }
 
     }
 }
