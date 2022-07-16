@@ -4,10 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>PetCafe_Remake_</RootNamespace>
-<<<<<<< HEAD
     <UserSecretsId>241184c2-cc69-4004-934b-2aaabe9daed5</UserSecretsId>
-=======
->>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
   </PropertyGroup>
 
   <ItemGroup>
@@ -45,34 +42,25 @@
   <ItemGroup>
     <PackageReference Include="CloudinaryDotNet" Version="1.19.0" />
     <PackageReference Include="EntityFramework" Version="6.4.4" />
-<<<<<<< HEAD
     <PackageReference Include="Json.Net" Version="1.0.33" />
     <PackageReference Include="Mailjet.Api" Version="3.0.0" />
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.9" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="6.0.7" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="6.0.7" />
-=======
->>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.6" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.6">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-<<<<<<< HEAD
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.6" />
-=======
->>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.6">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.6" />
-<<<<<<< HEAD
     <PackageReference Include="SendGrid" Version="9.28.0" />
-=======
->>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
   </ItemGroup>
 
 </Project>
