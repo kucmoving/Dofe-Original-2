@@ -1,8 +1,11 @@
 ﻿@model LoginViewModel
 @using PetCafe_Remake_.ViewModels
+<<<<<<< HEAD
 @using Microsoft.AspNetCore.Identity
 @inject SignInManager<AppUser> signInManager
 
+=======
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
 
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -13,6 +16,7 @@
 @{
     ViewData["Title"] = "Login";
 }
+<<<<<<< HEAD
 
 
     <!-- ======= Breadcrumbs ======= -->
@@ -33,6 +37,13 @@
 <div class="row">
     <div class="col-md-6 offset-3">
 
+=======
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <p>
+            <h4>Log in to your account</h4>
+        </p>
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
         @if(TempData["Error"] != null)
         {
             <div class="col-md-12 alert alert-danger">
@@ -41,6 +52,7 @@
         }
         <div class="row">
             <div class="col-md-8 offset-2">
+<<<<<<< HEAD
                         <p>
             <h4>Log in to your account</h4>
         </p>
@@ -109,10 +121,32 @@
 
 
 
+=======
+                <form asp-action="Login">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="EmailAddress" class="control-label"></label>
+                        <input asp-for="EmailAddress" class="form-control">
+                        <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password" class="control-label"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-outline-success float right" type="submit" value="Log in" />
+                        <a class="btn btn-outline-secondary" asp-controller="Dog" asp-action="Index">Cancel</a>
+                    </div>
+                </form>
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
             </div>
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0

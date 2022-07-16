@@ -1,5 +1,8 @@
 ﻿using CloudinaryDotNet.Actions;
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Identity;
+=======
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
 using Microsoft.AspNetCore.Mvc;
 using PetCafe_Remake_.Extension;
 using PetCafe_Remake_.Interface;
@@ -11,6 +14,7 @@ namespace PetCafe_Remake_.Controllers
     public class MemberController : Controller
     {
         private readonly IMemberRepository _memberRepository;
+<<<<<<< HEAD
         private readonly IPhotoService _photoService;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly UserManager<AppUser> _userManager;
@@ -22,6 +26,12 @@ namespace PetCafe_Remake_.Controllers
             _photoService = photoService;
             _httpContextAccessor = httpContextAccessor;
             _userManager = userManager;
+=======
+
+        public MemberController(IMemberRepository memberRepository)
+        {
+            _memberRepository = memberRepository;
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
         }
 
         public async Task<IActionResult> Index()
@@ -37,6 +47,7 @@ namespace PetCafe_Remake_.Controllers
 
         }
 
+<<<<<<< HEAD
         public async Task<IActionResult> EditProfile()
         {
             var user = await _userManager.GetUserAsync(User);
@@ -108,6 +119,8 @@ namespace PetCafe_Remake_.Controllers
         }
 
 
+=======
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
 
     }
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -7,6 +8,13 @@ using PetCafe_Remake_.Interface;
 using PetCafe_Remake_.Models;
 using PetCafe_Remake_.ViewModels;
 using System.Security.Claims;
+=======
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using PetCafe_Remake_.Data;
+using PetCafe_Remake_.Models;
+using PetCafe_Remake_.ViewModels;
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
 
 namespace PetCafe_Remake_.Controllers
 {

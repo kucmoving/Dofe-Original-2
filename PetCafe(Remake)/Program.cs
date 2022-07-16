@@ -38,16 +38,23 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 builder.Services.AddAuthentication()
 .AddFacebook(options =>
 {
-    options.AppId = "576000083909489";
-    options.AppSecret = "b5c1c450d66ddac94955f27bd98feeee";
+    options.AppId = "";
+    options.AppSecret = "";
 })
 .AddGoogle(options =>
 {
-    options.ClientId = "879838292246-91mllko1hb6cicbjred6kjrbb1se0u56.apps.googleusercontent.com";
-    options.ClientSecret = "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";
+    options.ClientId = "";
+    options.ClientSecret = "";
 });
 
 
+=======
+
+builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddMemoryCache();
+builder.Services.AddSession();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
 var app = builder.Build();
 
 if (args.Length == 1 && args[0].ToLower() == "seeddata")

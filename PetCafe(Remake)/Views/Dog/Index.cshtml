@@ -6,6 +6,7 @@
 @{
 }
 
+<<<<<<< HEAD
 
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
@@ -22,6 +23,8 @@
       </div>
     </section><!-- End Breadcrumbs -->
 
+=======
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
       <div class="album py-5 bg-light">
         <div class="container">
           <div class="row">
@@ -29,7 +32,11 @@
               {
               <div class="col-md-4">
               <div class="card mb-4 box-shadow">
+<<<<<<< HEAD
                 <img class="card-img-top" src="@item.Image" width="auto" height="auto" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+=======
+                <img class="card-img-top" src="@item.Image" width="100%" height="100%" height="225" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
                 <div class="card-body">
                   <p class="card-text">@item.DogName</p>
                   <p class="card-text">@item.Introduction</p>
@@ -38,6 +45,10 @@
 
                         <a type="btn-success" asp-controller="Dog" asp-action="Detail" 
                         asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">View</a>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
                         @if (User.Identity.IsAuthenticated && User.IsInRole("admin")){
                         <a type="btn-success" asp-controller="Dog" asp-action="Edit" 
                         asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Edit</a>
@@ -58,3 +69,21 @@
 
 
 
+<<<<<<< HEAD
+=======
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Gallery</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Gallery</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0

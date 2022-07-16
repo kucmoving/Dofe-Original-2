@@ -1,6 +1,9 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
+<<<<<<< HEAD
 using Newtonsoft.Json;
+=======
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
 using PetCafe_Remake_.Extension;
 using PetCafe_Remake_.Interface;
 using PetCafe_Remake_.Models;
@@ -35,7 +38,11 @@ namespace PetCafe_Remake_.Controllers
             return View(dog);
         }
 
+<<<<<<< HEAD
         [HttpGet]
+=======
+
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
         public IActionResult Create()
         {
             var curUserId = _httpContextAccessor.HttpContext.User.GetUserId();
@@ -73,7 +80,11 @@ namespace PetCafe_Remake_.Controllers
             return View(dogVM);
         }
 
+<<<<<<< HEAD
         [HttpGet]
+=======
+
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
         public async Task<IActionResult> Edit(int id) //to copy message as a form data
         {
             var dog = await _dogRepository.GetByIdAsync(id);
@@ -85,8 +96,12 @@ namespace PetCafe_Remake_.Controllers
                 VisitTimeId = dog.VisitTimeId,
                 VisitTime = dog.VisitTime,
                 URL = dog.Image,
+<<<<<<< HEAD
                 DogCategory = dog.DogCategory,
 
+=======
+                DogCategory = dog.DogCategory
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
             };
             return View(dogVM);
         }
@@ -101,18 +116,28 @@ namespace PetCafe_Remake_.Controllers
             }
 
             var dogId = await _dogRepository.GetByIdAsyncNoTracking(id);
+<<<<<<< HEAD
 
             if(dogId != null)
+=======
+            if (dogId != null)
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
             {
                 try
                 {
                     await _photoService.DeletePhotoAsync(dogId.Image);
                 }
+<<<<<<< HEAD
                 catch (Exception ex)
+=======
+                catch (Exception)
+
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
                 {
                     ModelState.AddModelError("", "Could not delete photo");
                     return View(dogVM);
                 }
+<<<<<<< HEAD
 
             var photoResult = await _photoService.AddPhotoAsync(dogVM.Image);
             if (photoResult.Error != null)
@@ -121,6 +146,10 @@ namespace PetCafe_Remake_.Controllers
                 return View(dogVM);
             }
             var dog = new Dog //no need to put foreign inside
+=======
+                var photoResult = await _photoService.AddPhotoAsync(dogVM.Image);
+                var dog = new Dog
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
                 {
                     Id = id,
                     DogName = dogVM.DogName,
@@ -128,6 +157,7 @@ namespace PetCafe_Remake_.Controllers
                     Image = photoResult.Url.ToString(),
                     VisitTimeId = dogVM.VisitTimeId,
                     VisitTime = dogVM.VisitTime,
+<<<<<<< HEAD
                     AppUserId = dogId.AppUserId
             };
             _dogRepository.Update(dog);
@@ -140,6 +170,20 @@ namespace PetCafe_Remake_.Controllers
         }
 
         [HttpGet]
+=======
+                };
+
+                _dogRepository.Update(dog);
+
+                return RedirectToAction("index");
+            }
+            else
+            {
+                return View(dogVM);
+            }
+        }
+
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
         public async Task<IActionResult> Delete(int id)
         {
             var dogDetails = await _dogRepository.GetByIdAsync(id);

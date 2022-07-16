@@ -43,15 +43,37 @@ namespace PetCafe_Remake_.Repository
             return await _context.Events.Where(i => i.Id == id).AsNoTracking().FirstOrDefaultAsync();
         }
 
+<<<<<<< HEAD
+=======
+
+        //      public async Task<Sharing> GetByIdAsyncNoTracking(int id) // no tracking in editing , 否則會重疊
+        //     {
+        //        return await _context.Events.Include(i => i.VisitTime).AsNoTracking().FirstOrDefaultAsync(i => i.Id == id);
+        //  }
+
+        //     public async Task<IEnumerable<Event>> GetDogByDay(string day) //goin to dog > VisitTime > day
+        //      {
+        //          return await _context.Events.Where(c => c.VisitTime.Day.Contains(day)).ToListAsync();
+        //      }
+
+        //       public Task<IEnumerable<Event>> GetSharingByDay(string day)
+        //       {
+        //           throw new NotImplementedException();
+        //       }
+
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
         public bool Save()
         {
             var saved = _context.SaveChanges();
             return saved > 0 ? true : false;
         }
+<<<<<<< HEAD
         public async Task<IEnumerable<Event>> GetEventByCity(string region)
         {
             return await _context.Events.Where(c => c.Region.Contains(region)).Distinct().ToListAsync();
         }
+=======
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
 
         public bool Update(Event _event)
         {

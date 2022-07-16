@@ -36,8 +36,12 @@
                                 }
                                 <img alt="Image" src="@imageUrl" class="avatar avatar-lg mb-3 mb-md-0" />
                                 <div class="media-body">
+<<<<<<< HEAD
                             <form method="post" asp-action="EditProfile" enctype="multipart/form-data">
                                 <input type="hidden" id="Id" name="Id" asp-for="Id" />
+=======
+                                    <form asp-action="EditProfile" enctype="multipart/form-data">
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
                                         <label asp-for="Image" class="custom-file mb-2" for="file2">
                                             <input asp-for="Image" type="file" id="file2" class="custom-file-input height-0" oninput="submitProfileImage();" />
                                             <span class="btn btn-primary"><i class="icon-upload-to-cloud">&nbsp;</i>Upload</span>
@@ -48,7 +52,10 @@
                                             <small>For best results, use an image at least 256px by 256px in either .jpg or .png format</small>
                                         </div>
 
+<<<<<<< HEAD
                                         <input asp-for="UserName" hidden />
+=======
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
                                         <input asp-for="Gender" hidden />
                                         <input asp-for="Occupation" hidden />
                                         <input asp-for="Region" hidden />
@@ -71,6 +78,7 @@
                     <div class="row">
                         <!--end of col-->
                         <div class="col-12 col-md-8 order-md-1">
+<<<<<<< HEAD
                             <form method="post" asp-action="EditProfile" enctype="multipart/form-data">
                                 <input type="hidden" id="Id" name="Id" asp-for="Id" />
                                 <div class="col-6">
@@ -81,6 +89,9 @@
                                     </div>
                                  </div>
 
+=======
+                            <form asp-action="EditProfile" method="post" class="row">
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label asp-for="Gender">Gender:</label>
@@ -105,19 +116,30 @@
 
                                 <div class="col-12">
                                     <div class="form-group">
+<<<<<<< HEAD
                                         <label asp-for="AboutMe">About me:</label>
                                         <textarea asp-for="AboutMe" type="text" class="form-control form-control-lg"
                                                   name="AboutMe"
                                                   rows="4"
                                                   id="about-me"></textarea>
                                                    <span asp-validation-for="AboutMe" class="text-danger"></span>
+=======
+                                        <label for="about-me">About me:</label>
+                                        <textarea class="form-control form-control-lg"
+                                                  name="profileBio"
+                                                  rows="4"
+                                                  id="about-me"></textarea>
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
                                         <button class="btn btn-primary" type="submit">Save changes</button>
+<<<<<<< HEAD
                                     
 
+=======
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
                                     </div>
                                 </div>
                             </form>

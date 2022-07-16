@@ -8,8 +8,12 @@
                 <table class="table table-hover align-items-center table-borderless">
   <thead>
     <tr>
+<<<<<<< HEAD
       <th scope="col">UserName</th>
       <th scope="col">Image</th>
+=======
+      <th scope="col">Email</th>
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
       <th scope="col">View Profile</th>
       <th scope="col">Gender</th>
       <th scope="col">Region</th>
@@ -21,12 +25,17 @@
                             <tr class="bg-white">
                                 <th scope="row">
                                     <div class="media align-items-center">
+<<<<<<< HEAD
+=======
+                                      <img alt="Image profile avatar" src="@user.ProfileImageUrl" class="avatar">
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
                                         <div class="media-body">
                                             <span class="h6 mb-0">@user.UserName</span>
                                         </div>
                                     </div>
                                 </th>
                                 <td>
+<<<<<<< HEAD
                                     <img alt="Image profile avatar" src="@user.ProfileImageUrl" width="70px" height="70px" class="avatar">
                                 </td>
                                 <td>
@@ -35,6 +44,12 @@
                                     <a class="btn btn-outline-primary" asp-controller="User" asp-action="Detail" asp-route-id="@user.Id">View Profile</a>
                                     </div>
                                     </td>
+=======
+                                    <a class="btn btn-outline-primary" asp-controller="User" asp-action="Detail" asp-route-id="@user.Id">
+                                        View Profile
+                                    </a>
+                                </td>
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
                                 <td><i class="icon-location"></i> @user.Gender</td>
                                 <td><i class="icon-location"></i> @user.Region</td>
                                 <td>

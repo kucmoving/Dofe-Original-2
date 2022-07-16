@@ -61,11 +61,20 @@
 
 
 <form method="post" asp-action="Edit" enctype="multipart/form-data">
+<<<<<<< HEAD
         <input type="hidden" id="AppUserId" name="AppUserId"/>
     <div class="row">
                 <div class="col-md-6 form-group">
   <div class="form-group">
     <input asp-for="EventName" class="form-control" placeholder="Ex. Sport Day 2022">
+=======
+        <input type="hidden" value="Id" id="Id" />
+    <div class="row">
+                <div class="col-md-6 form-group">
+  <div class="form-group">
+    <label asp-for="EventName">EventName</label>
+    <input asp-for="EventName" class="form-control" placeholder="Ex. Bobby">
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
     <span asp-valiadation-for="EventName" class="text-danger"></span>
   </div>
     </div>
@@ -73,17 +82,28 @@
      <!--select-->
 <div class="col-md-6 form-group">
     <div class="form-group">
+<<<<<<< HEAD
     <select asp-for="EventCategory" asp-items="@Html.GetEnumSelectList<EventCategory>()" class="form-control form-control-sm">
             <option selected="selected" value="">--Select--</option>
         </select>
          <span asp-validation-for="EventCategory" class="text-danger"></span>
 
+=======
+    <label asp-for="EventCategory">Event category</label>
+    <select asp-for="EventCategory" asp-items="@Html.GetEnumSelectList<EventCategory>()" class="form-control form-control-sm">
+        <option>Select a category</option>
+        </select>
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
          </div>
                   </div>
 
               <!--order table, table.column-->
      <div class="col-md-6 form-group">
   <div class="form-group">
+<<<<<<< HEAD
+=======
+    <label asp-for="EventTime">Day to visit</label>
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
     <input asp-for="EventTime" asp-format="{0:dd/MM/yyyy HH:mm}" class="form-control" />
     <span asp-valiadation-for="EventTime" class="text-danger"></span>
   </div>
@@ -95,7 +115,12 @@
   <!---region-->
 <div class="col-md-6 form-group">
   <div class="form-group">
+<<<<<<< HEAD
     <input asp-for="Region" class="form-control" placeholder="Ex. England">
+=======
+    <label asp-for="Region">Region</label>
+    <input asp-for="Region" class="form-control" placeholder="Ex. Bobby">
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
     <span asp-valiadation-for="Region" class="text-danger"></span>
   </div>
     </div>
@@ -104,12 +129,20 @@
   </div>
   <div class="form-group">
     <label asp-for="Introduction">Introduction</label>
+<<<<<<< HEAD
     <textarea row="4" asp-for="Introduction" class="form-control" placeholder="There is nothing better than a fun event to break the monotony. That is why I am super excited for this event. Come out to this event and you will surely have a good time."></textarea>
+=======
+    <textarea row="4" asp-for="Introduction" class="form-control" placeholder="Ex.My dog sits on my lap, stretches his/her paws, and dangles to find the most comfortable position. I think he/she is the cutest pet I could wish for."></textarea>
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
     <span asp-valiadation-for="Introduction" class="text-danger"></span>
   </div>
       <div class="form-group">
     <label asp-for="Image">Image</label>
+<<<<<<< HEAD
     <input asp-for="Image" class="form-control" placeholder="Ex..">
+=======
+    <input asp-for="Image" class="form-control" placeholder="Ex.My dog sits on my lap, stretches his/her paws, and dangles to find the most comfortable position. I think he/she is the cutest pet I could wish for.">
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
     <span asp-valiadation-for="Image" class="text-danger"></span>
   </div>
 
