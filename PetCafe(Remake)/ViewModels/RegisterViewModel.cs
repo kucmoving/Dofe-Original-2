@@ -6,7 +6,7 @@ namespace PetCafe_Remake_.ViewModels
     {
         [Display(Name = "Email address")]
         [Required(ErrorMessage = "Email address is required")]
-        public string EmailAddress { get; set; }
+        public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]

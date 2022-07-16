@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using PetCafe_Remake_.Data;
 using PetCafe_Remake_.Interface;
@@ -14,16 +15,16 @@ namespace PetCafe_Remake_.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly ApplicationDbContext _context;
-        private readonly ISendGridEmail _sendGridEmail;
+        private readonly IEmailSender _emailSender;
 
         public AccountController(UserManager<AppUser> userManager,
             SignInManager<AppUser> signInManager, ApplicationDbContext context,
-            ISendGridEmail isendGridEmail)
+            IEmailSender emailSender)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _context = context;
-            _sendGridEmail = isendGridEmail;
+            _emailSender = emailSender;
         }
         public IActionResult Register()
         {
@@ -36,7 +37,7 @@ namespace PetCafe_Remake_.Controllers
         {
             if (!ModelState.IsValid) return View(registerViewModel);
 
-            var user = await _userManager.FindByEmailAsync(registerViewModel.EmailAddress);
+            var user = await _userManager.FindByEmailAsync(registerViewModel.Email);
             if (user != null)
             {
                 TempData["Error"] = "This email address is already in use";
@@ -44,8 +45,8 @@ namespace PetCafe_Remake_.Controllers
             }
             var newUser = new AppUser()
             {
-                Email = registerViewModel.EmailAddress,
-                UserName = registerViewModel.EmailAddress
+                Email = registerViewModel.Email,
+                UserName = registerViewModel.Email
             };
             var newUserResponse = await _userManager.CreateAsync(newUser, registerViewModel.Password);
 
@@ -193,7 +194,7 @@ namespace PetCafe_Remake_.Controllers
                 var code = await _userManager.GeneratePasswordResetTokenAsync(user);
                 var callbackurl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
 
-                await _sendGridEmail.SendEmailAsync(model.Email, "Reset Email Confirmation", "Please reset email by going to this " +
+                await _emailSender.SendEmailAsync(model.Email, "Reset Email Confirmation", "Please reset email by going to this " +
                     "<a href=\"" + callbackurl + "\">link</a>");
                 return RedirectToAction("ForgotPasswordConfirmation");
             }

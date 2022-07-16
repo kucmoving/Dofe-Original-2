@@ -33,7 +33,7 @@ namespace PetCafe_Remake_.Service
             var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {
-                From = new EmailAddress("carrodsk2@hotmail.com"),
+                From = new EmailAddress("kuc.moving@gmail.com"),
                 Subject = subject,
                 PlainTextContent = message,
                 HtmlContent = message
