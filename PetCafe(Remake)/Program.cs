@@ -25,6 +25,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+<<<<<<< HEAD
 builder.Services.AddTransient<ISendGridEmail, SendGridEmail>();
 builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration.GetSection("SendGrid"));
 builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
@@ -45,6 +46,13 @@ builder.Services.AddAuthentication()
 });
 
 
+=======
+
+builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddMemoryCache();
+builder.Services.AddSession();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
 var app = builder.Build();
 
 if (args.Length == 1 && args[0].ToLower() == "seeddata")

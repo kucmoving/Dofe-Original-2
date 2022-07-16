@@ -32,11 +32,18 @@
         </div>
 
         <div class="row content">
+<<<<<<< HEAD
          <div class="col-lg-2 col-md-2"></div>
           <div class="col-lg-4 col-md-4 d-flex align-items-stretch">
             <div class="member text-center">
               <div class="member-img text-center">
                 <img src="@Model.ProfileImageUrl" width="300" height="300" class="img-fluid align-middle" alt="">
+=======
+          <div class="col-lg-6 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="@Model.ProfileImageUrl" class="img-fluid" alt="">
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -48,11 +55,16 @@
             </div>
           </div>
 
+<<<<<<< HEAD
           <div class="col-lg-4 pt-2 pt-lg-0">
+=======
+          <div class="col-lg-6 pt-4 pt-lg-0">
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
 
             <ul>
               <li>Gender: </i> @Model.Gender</li>
               <li>Region :</i> @Model.Region</li>
+<<<<<<< HEAD
               <li>Occupation :</i> @Model.Occupation</li>
               <li>About Me:</i> @Model.AboutMe</li>
 
@@ -65,6 +77,16 @@
            <a class="btn btn-outline-primary" asp-controller="Member" 
            asp-action="Index" >Back to Member</a>  
 
+=======
+            </ul>
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+           <a class="btn btn-outline-primary" asp-controller="User" 
+           asp-action="Index" asp-route-id="@Model.Id">Back</a>  
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
           </div>
         </div>
 

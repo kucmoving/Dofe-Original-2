@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -6,6 +7,13 @@ using PetCafe_Remake_.Interface;
 using PetCafe_Remake_.Models;
 using PetCafe_Remake_.ViewModels;
 using System.Security.Claims;
+=======
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using PetCafe_Remake_.Data;
+using PetCafe_Remake_.Models;
+using PetCafe_Remake_.ViewModels;
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
 
 namespace PetCafe_Remake_.Controllers
 {
@@ -14,16 +22,25 @@ namespace PetCafe_Remake_.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly ApplicationDbContext _context;
+<<<<<<< HEAD
         private readonly ISendGridEmail _sendGridEmail;
 
         public AccountController(UserManager<AppUser> userManager,
             SignInManager<AppUser> signInManager, ApplicationDbContext context,
             ISendGridEmail isendGridEmail)
+=======
+
+        public AccountController(UserManager<AppUser> userManager,
+            SignInManager<AppUser> signInManager, ApplicationDbContext context)
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _context = context;
+<<<<<<< HEAD
             _sendGridEmail = isendGridEmail;
+=======
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
         }
         public IActionResult Register()
         {
@@ -54,6 +71,14 @@ namespace PetCafe_Remake_.Controllers
             return RedirectToAction("Index", "Dog");
         }
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
         public IActionResult Login()
         {
             var response = new LoginViewModel();
@@ -64,7 +89,11 @@ namespace PetCafe_Remake_.Controllers
         {
             if (!ModelState.IsValid) return View(loginViewModel);
 
+<<<<<<< HEAD
             var user = await _userManager.FindByEmailAsync(loginViewModel.Email);
+=======
+            var user = await _userManager.FindByEmailAsync(loginViewModel.EmailAddress);
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
             if (user != null)
             {
                 //User is found, check password
@@ -94,6 +123,7 @@ namespace PetCafe_Remake_.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Login", "Account");
         }
+<<<<<<< HEAD
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -237,5 +267,8 @@ namespace PetCafe_Remake_.Controllers
         {
             return View();
         }
+=======
+
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
     }
 }

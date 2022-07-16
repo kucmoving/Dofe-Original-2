@@ -14,8 +14,12 @@ namespace PetCafe_Remake_.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly IPhotoService _photoService;
 
+<<<<<<< HEAD
         public UserController(IUserRepository userRepository,
             UserManager<AppUser> userManager, IPhotoService photoService)
+=======
+        public UserController(IUserRepository userRepository, UserManager<AppUser> userManager, IPhotoService photoService)
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
         {
             _photoService = photoService;
             _userRepository = userRepository;
@@ -35,9 +39,13 @@ namespace PetCafe_Remake_.Controllers
                     UserName = user.UserName,
                     Gender = user.Gender,
                     Region = user.Region,
+<<<<<<< HEAD
                     Occupation = user.Occupation,
                     ProfileImageUrl = user.ProfileImageUrl,
                     AboutMe = user.AboutMe
+=======
+                    ProfileImageUrl = user.ProfileImageUrl,
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
                 };
                 result.Add(userViewModel);
             }
@@ -53,9 +61,13 @@ namespace PetCafe_Remake_.Controllers
                 UserName = user.UserName,
                 Gender = user.Gender,
                 Region = user.Region,
+<<<<<<< HEAD
                 Occupation = user.Occupation,
                 ProfileImageUrl = user.ProfileImageUrl,
                 AboutMe = user.AboutMe
+=======
+                ProfileImageUrl = user.ProfileImageUrl,
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
 
             };
             return View(userDetailViewModel);
@@ -71,12 +83,19 @@ namespace PetCafe_Remake_.Controllers
             }
             var editUserViewModel = new EditProfileViewModel()
             {
+<<<<<<< HEAD
                 UserName = user.UserName,
                 Gender = user.Gender,
                 ProfileImageUrl = user.ProfileImageUrl,
                 Occupation = user.Occupation,
                 Region = user.Region,
                 AboutMe = user.AboutMe
+=======
+                Gender = user.Gender,
+                ProfileImageUrl = user.ProfileImageUrl,
+                Occupation = user.Occupation,
+                Region = user.Region
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
             };
             return View(editUserViewModel);
         }
@@ -120,11 +139,17 @@ namespace PetCafe_Remake_.Controllers
 
                 return View(editVM);
             }
+<<<<<<< HEAD
             user.UserName = editVM.UserName;
             user.Gender = editVM.Gender;
             user.Region = editVM.Region;
             user.Occupation = editVM.Occupation;
             user.AboutMe = editVM.AboutMe;
+=======
+            user.Gender = editVM.Gender;
+            user.Region = editVM.Region;
+            user.Occupation = editVM.Occupation;
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
             await _userManager.UpdateAsync(user);
 
             return RedirectToAction("Detail", "User", new { user.Id });

@@ -50,11 +50,11 @@ namespace PetCafe_Remake_.Controllers
                     EventName = eventVM.EventName,
                     Introduction = eventVM.Introduction,
                     Image = result.Url.ToString(),
+                    AppUserId = eventVM.AppUserId,
                     EventTime = eventVM.EventTime,
-                    Region = eventVM.Region,
-                    AppUserId = eventVM.AppUserId
 
-                };
+
+    };
                 _eventRepository.Add(_event);
                 return RedirectToAction("index");
             }
@@ -72,6 +72,7 @@ namespace PetCafe_Remake_.Controllers
             if (_event == null) return View("Error");
             var _eventVM = new EditEventViewModel
             {
+                Id = id,
                 EventName = _event.EventName,
                 Introduction = _event.Introduction,
                 EventTime = _event.EventTime,
@@ -82,6 +83,7 @@ namespace PetCafe_Remake_.Controllers
             };
             return View(_eventVM);
         }
+
         [HttpPost] //to update
         public async Task<IActionResult> Edit(int id, EditEventViewModel eventVM)
         {
@@ -99,36 +101,31 @@ namespace PetCafe_Remake_.Controllers
                 {
                     await _photoService.DeletePhotoAsync(eventId.Image);
                 }
-                catch (Exception ex)
                 {
                     ModelState.AddModelError("", "Could not delete photo");
                     return View(eventVM);
                 }
 
                 var photoResult = await _photoService.AddPhotoAsync(eventVM.Image);
-                if (photoResult.Error != null)
-                {
-                    ModelState.AddModelError("Image", "Photo upload failed");
-                    return View(eventVM);
-                }
-                var _event = new Event //no need to put foreign inside
                 {
                     Id = id,
                     EventName = eventVM.EventName,
                     EventCategory = eventVM.EventCategory,
                     Introduction = eventVM.Introduction,
+                    EventTime = eventVM.EventTime,
                     Image = photoResult.Url.ToString(),
-                    EventTime = (DateTime)eventVM.EventTime,
-                    AppUserId = eventId.AppUserId,
                     Region = eventVM.Region
                 };
+
                 _eventRepository.Update(_event);
+
                 return RedirectToAction("index");
             }
             else
             {
                 return View(eventVM);
             }
+
         }
 
         public async Task<IActionResult> Delete(int id)

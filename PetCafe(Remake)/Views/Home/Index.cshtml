@@ -1,13 +1,19 @@
+<<<<<<< HEAD
 ﻿@model HomeViewModel
 @using PetCafe_Remake_.ViewModels
 
 @{
     ViewData["Title"] = "Dofe";
+=======
+﻿@{
+    ViewData["Title"] = "Home Page";
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
 }
 
 
   <!-- ======= Hero Section ======= -->
 
+<<<<<<< HEAD
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -34,6 +40,39 @@
   </button>
 </div>
 
+=======
+  <section id="hero">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+      <div class="carousel-inner" role="listbox">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image: url("~/img/slide/slide-1.jpg")">
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item" style="background-image: url("~/img/slide/slide-2.jpg")">
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item" style="background-image: url("~/img/slide/slide-3.jpg")">
+        </div>
+
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+  </section><!-- End Hero -->
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
 
   <main id="main">
 
@@ -42,14 +81,20 @@
       <div class="container">
 
         <div class="section-title">
+<<<<<<< HEAD
           <h1 >Dofe</h1>
 
           <h5>Dofe is a coffee shop located in the city center, which serves coffee and tea,
               in addition to light refreshments such as baked goods or snacks.</h5>
+=======
+          <h2>My & Family</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
         </div>
 
         <div class="row content">
           <div class="col-lg-6">
+<<<<<<< HEAD
             <img src="~/img/dog_coffee.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
@@ -67,11 +112,32 @@
           <a class="btn btn-outline-primary mt-4" asp-controller="Account" asp-action="Register" >View our dogs</a>
            <a class="btn btn-outline-primary mt-4" asp-controller="Account" asp-action="Register" >Search for a event</a>
            </div>
+=======
+            <img src="~/img/about.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+            </ul>
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <a href="our-story.html" class="btn-learn-more">Learn More</a>
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
           </div>
         </div>
 
       </div>
     </section><!-- End My & Family Section -->
+<<<<<<< HEAD
 <section>
     <div class="container">
         @if (Model.Events == null)
@@ -117,3 +183,73 @@
                 <!--end of col-->
     <!-- ======= Features Section ======= -->
 </main><!-- End #main -->
+=======
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 icon-box">
+            <div class="icon"><i class="bi bi-laptop"></i></div>
+            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box">
+            <div class="icon"><i class="bi bi-bar-chart"></i></div>
+            <h4 class="title"><a href="">Dolor Sitema</a></h4>
+            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box">
+            <div class="icon"><i class="bi bi-bounding-box"></i></div>
+            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box">
+            <div class="icon"><i class="bi bi-broadcast"></i></div>
+            <h4 class="title"><a href="">Magni Dolores</a></h4>
+            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box">
+            <div class="icon"><i class="bi bi-camera"></i></div>
+            <h4 class="title"><a href="">Nemo Enim</a></h4>
+            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box">
+            <div class="icon"><i class="bi bi-diagram-3"></i></div>
+            <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
+            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+    <!-- ======= Recent Photos Section ======= -->
+    <section id="recent-photos" class="recent-photos">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Recent Photos</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="recent-photos-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><a href="~/img/recent-photos/recent-photos-1.jpg" class="glightbox"><img src="~/img/recent-photos/recent-photos-1.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a href="~/img/recent-photos/recent-photos-2.jpg" class="glightbox"><img src="~/img/recent-photos/recent-photos-2.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a href="~/img/recent-photos/recent-photos-3.jpg" class="glightbox"><img src="~/img/recent-photos/recent-photos-3.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a href="~/img/recent-photos/recent-photos-4.jpg" class="glightbox"><img src="~/img/recent-photos/recent-photos-4.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a href="~/img/recent-photos/recent-photos-5.jpg" class="glightbox"><img src="~/img/recent-photos/recent-photos-5.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a href="~/img/recent-photos/recent-photos-6.jpg" class="glightbox"><img src="~/img/recent-photos/recent-photos-6.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a href="~/img/recent-photos/recent-photos-7.jpg" class="glightbox"><img src="~/img/recent-photos/recent-photos-7.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a href="~/img/recent-photos/recent-photos-8.jpg" class="glightbox"><img src="~/img/recent-photos/recent-photos-8.jpg" class="img-fluid" alt=""></a></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Recent Photos Section -->
+
+  </main><!-- End #main -->
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+<<<<<<< HEAD
 using Newtonsoft.Json;
 using PetCafe_Remake_.Helper;
 using PetCafe_Remake_.Interface;
@@ -7,12 +8,17 @@ using PetCafe_Remake_.ViewModels;
 using System.Diagnostics;
 using System.Globalization;
 using System.Net;
+=======
+using PetCafe_Remake_.Models;
+using System.Diagnostics;
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
 
 namespace PetCafe_Remake_.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+<<<<<<< HEAD
         private readonly IEventRepository _eventRepository;
 
         public HomeController(ILogger<HomeController> logger, IEventRepository eventRepository)
@@ -53,6 +59,18 @@ namespace PetCafe_Remake_.Controllers
 
             return View(homeViewModel);
             }
+=======
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
 
         public IActionResult Privacy()
         {

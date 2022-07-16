@@ -160,9 +160,12 @@ namespace PetCafe_Remake_.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+<<<<<<< HEAD
                     b.Property<string>("AboutMe")
                         .HasColumnType("nvarchar(max)");
 
+=======
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
@@ -266,7 +269,11 @@ namespace PetCafe_Remake_.Migrations
                     b.Property<string>("Introduction")
                         .HasColumnType("nvarchar(max)");
 
+<<<<<<< HEAD
                     b.Property<int?>("VisitTimeId")
+=======
+                    b.Property<int>("VisitTimeId")
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -401,7 +408,13 @@ namespace PetCafe_Remake_.Migrations
 
                     b.HasOne("PetCafe_Remake_.Models.VisitTime", "VisitTime")
                         .WithMany()
+<<<<<<< HEAD
                         .HasForeignKey("VisitTimeId");
+=======
+                        .HasForeignKey("VisitTimeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
 
                     b.Navigation("AppUser");
 

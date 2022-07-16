@@ -33,7 +33,10 @@ namespace PetCafe_Remake_.Service
             }
             return uploadResult;
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
         public async Task<DeletionResult> DeletePhotoAsync(string publicId)
         {
             var deleteParams = new DeletionParams(publicId);

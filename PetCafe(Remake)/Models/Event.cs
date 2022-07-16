@@ -1,6 +1,9 @@
 ﻿using PetCafe_Remake_.Models.Data.Enum;
 using System.ComponentModel.DataAnnotations;
+<<<<<<< HEAD
 using System.ComponentModel.DataAnnotations.Schema;
+=======
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
 
 namespace PetCafe_Remake_.Models
 {
@@ -19,8 +22,15 @@ namespace PetCafe_Remake_.Models
         public DateTime EventTime { get; set; }
 
         public EventCategory EventCategory { get; set; }
+<<<<<<< HEAD
         [ForeignKey("AppUser")]
         public string? AppUserId { get; set; }
+=======
+
+
+        public string? AppUserId { get; set; }
+
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
         public AppUser? AppUser { get; set; }
     }
 

@@ -40,6 +40,13 @@ namespace PetCafe_Remake_.Repository
             return await _context.Dogs.Include(i => i.VisitTime).AsNoTracking().FirstOrDefaultAsync(i => i.Id == id);
         }
 
+<<<<<<< HEAD
+=======
+        public async Task<IEnumerable<Dog>> GetDogByDay(string day) //goin to dog > VisitTime > day
+        {
+            return await _context.Dogs.Where(c => c.VisitTime.Day.Contains(day)).ToListAsync();
+        }
+>>>>>>> 9172c66b404ee8df6bfc144723ad290023ac8ec0
 
         public bool Save()
         {
