@@ -36,13 +36,13 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 builder.Services.AddAuthentication()
 .AddFacebook(options =>
 {
-    options.AppId = "576000083909489";
-    options.AppSecret = "b5c1c450d66ddac94955f27bd98feeee";
+    options.AppId = "";
+    options.AppSecret = "";
 })
 .AddGoogle(options =>
 {
-    options.ClientId = "879838292246-91mllko1hb6cicbjred6kjrbb1se0u56.apps.googleusercontent.com";
-    options.ClientSecret = "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";
+    options.ClientId = "";
+    options.ClientSecret = "";
 });
 
 
